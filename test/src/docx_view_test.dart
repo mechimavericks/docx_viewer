@@ -241,7 +241,6 @@ void main() {
 
     testWidgets('should render content in a scrollable view', (WidgetTester tester) async {
       // Arrange
-      final longText = List.generate(100, (i) => 'Line $i').join('\n');
       final docxBytes = TestDocxGenerator.createDocxWithMultipleParagraphs(
         List.generate(100, (i) => 'Line $i'),
       );
