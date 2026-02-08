@@ -201,6 +201,38 @@ All three methods work:
 
 If the DOCX file path is empty, the file type is unsupported, or the file doesn't exist, an error message will be displayed. If you provide an `onError` callback, it will be invoked with the error.
 
+## Testing
+
+This package includes comprehensive test coverage to ensure reliability across all platforms. The test suite covers:
+
+- Text extraction from DOCX files (various formats, edge cases)
+- Widget functionality (loading states, error handling, display)
+- Platform-specific file I/O implementations
+- Error handling and edge cases
+
+### Running Tests
+
+```bash
+# Run all tests
+flutter test
+
+# Run tests with coverage
+flutter test --coverage
+
+# Use the provided test runner script
+./test/run_tests.sh
+```
+
+### Continuous Integration
+
+Tests are automatically run on every pull request through GitHub Actions. The CI pipeline:
+- Runs static analysis and formatting checks
+- Executes all tests with coverage reporting
+- Posts coverage reports as PR comments
+- Ensures code quality standards are met
+
+For more details about the test suite, see [test/README.md](test/README.md).
+
 ## Contributing
 We welcome contributions! If you'd like to contribute to this Flutter Package Project, please check out our [Contribution Guidelines](Contribution.md).
 

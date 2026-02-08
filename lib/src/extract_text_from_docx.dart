@@ -43,7 +43,7 @@ String extractTextFromDocxBytes(Uint8List bytes) {
         paragraph.findAllElements('w:t').map((node) => node.innerText).join();
 
     // Check for numbering information in the paragraph
-    final numIdNode = paragraph.findElements('w:numId').firstOrNull;
+    final numIdNode = paragraph.findAllElements('w:numId').firstOrNull;
     final numId = numIdNode?.getAttribute('w:val');
 
     // Manage numbering: increment or reset based on numId changes
