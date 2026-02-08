@@ -8,7 +8,7 @@ import 'src/file_io_web_test.dart' as file_io_web_tests;
 import 'utils/support_type_test.dart' as support_type_tests;
 
 /// Main test file that runs all test suites for the docx_viewer package
-/// 
+///
 /// This ensures comprehensive test coverage across all components:
 /// - Text extraction from DOCX files
 /// - DocxView widget functionality

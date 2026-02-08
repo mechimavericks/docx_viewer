@@ -28,7 +28,8 @@ void main() {
         expect(e, isA<UnsupportedError>());
         expect(
           e.toString(),
-          contains('Cannot read files without platform-specific implementation'),
+          contains(
+              'Cannot read files without platform-specific implementation'),
         );
       }
     });
@@ -42,7 +43,8 @@ void main() {
         expect(e, isA<UnsupportedError>());
         expect(
           e.toString(),
-          contains('Cannot check file existence without platform-specific implementation'),
+          contains(
+              'Cannot check file existence without platform-specific implementation'),
         );
       }
     });

@@ -6,7 +6,8 @@ import '../fixtures/test_docx_generator.dart';
 
 void main() {
   group('DocxView Widget', () {
-    testWidgets('should display loading indicator initially', (WidgetTester tester) async {
+    testWidgets('should display loading indicator initially',
+        (WidgetTester tester) async {
       // Arrange
       final docxBytes = TestDocxGenerator.createSimpleDocx('Test content');
 
@@ -23,7 +24,8 @@ void main() {
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
     });
 
-    testWidgets('should display content after loading with bytes parameter', (WidgetTester tester) async {
+    testWidgets('should display content after loading with bytes parameter',
+        (WidgetTester tester) async {
       // Arrange
       final docxBytes = TestDocxGenerator.createSimpleDocx('Test content');
 
@@ -65,7 +67,8 @@ void main() {
       expect(textWidget.style?.fontSize, equals(customFontSize.toDouble()));
     });
 
-    testWidgets('should use default font size when not specified', (WidgetTester tester) async {
+    testWidgets('should use default font size when not specified',
+        (WidgetTester tester) async {
       // Arrange
       final docxBytes = TestDocxGenerator.createSimpleDocx('Test content');
 
@@ -84,10 +87,12 @@ void main() {
       expect(textWidget.style?.fontSize, equals(16.0)); // Default font size
     });
 
-    testWidgets('should display multiple paragraphs with newlines', (WidgetTester tester) async {
+    testWidgets('should display multiple paragraphs with newlines',
+        (WidgetTester tester) async {
       // Arrange
       final paragraphs = ['First line', 'Second line', 'Third line'];
-      final docxBytes = TestDocxGenerator.createDocxWithMultipleParagraphs(paragraphs);
+      final docxBytes =
+          TestDocxGenerator.createDocxWithMultipleParagraphs(paragraphs);
 
       // Act
       await tester.pumpWidget(
@@ -121,7 +126,8 @@ void main() {
       expect(find.text(''), findsOneWidget);
     });
 
-    testWidgets('should call onError callback when no input provided', (WidgetTester tester) async {
+    testWidgets('should call onError callback when no input provided',
+        (WidgetTester tester) async {
       // Arrange
       Exception? capturedError;
       void onErrorCallback(Exception error) {
@@ -148,7 +154,9 @@ void main() {
       );
     });
 
-    testWidgets('should display error message when no input provided and no callback', (WidgetTester tester) async {
+    testWidgets(
+        'should display error message when no input provided and no callback',
+        (WidgetTester tester) async {
       // Act
       await tester.pumpWidget(
         MaterialApp(
@@ -163,7 +171,8 @@ void main() {
       expect(find.textContaining('No input provided'), findsOneWidget);
     });
 
-    testWidgets('should call onError when both filePath and bytes are provided', (WidgetTester tester) async {
+    testWidgets('should call onError when both filePath and bytes are provided',
+        (WidgetTester tester) async {
       // Arrange
       final docxBytes = TestDocxGenerator.createSimpleDocx('Test');
       Exception? capturedError;
@@ -193,7 +202,9 @@ void main() {
       );
     });
 
-    testWidgets('should display error when both filePath and bytes provided without callback', (WidgetTester tester) async {
+    testWidgets(
+        'should display error when both filePath and bytes provided without callback',
+        (WidgetTester tester) async {
       // Arrange
       final docxBytes = TestDocxGenerator.createSimpleDocx('Test');
 
@@ -214,7 +225,8 @@ void main() {
       expect(find.textContaining('Define only one of'), findsOneWidget);
     });
 
-    testWidgets('should handle invalid bytes gracefully', (WidgetTester tester) async {
+    testWidgets('should handle invalid bytes gracefully',
+        (WidgetTester tester) async {
       // Arrange
       final invalidBytes = Uint8List.fromList([1, 2, 3, 4, 5]);
       Exception? capturedError;
@@ -239,7 +251,8 @@ void main() {
       expect(capturedError.toString(), contains('Error reading file'));
     });
 
-    testWidgets('should render content in a scrollable view', (WidgetTester tester) async {
+    testWidgets('should render content in a scrollable view',
+        (WidgetTester tester) async {
       // Arrange
       final docxBytes = TestDocxGenerator.createDocxWithMultipleParagraphs(
         List.generate(100, (i) => 'Line $i'),
@@ -259,7 +272,9 @@ void main() {
       expect(find.byType(SingleChildScrollView), findsOneWidget);
     });
 
-    testWidgets('should display "No content to display" when fileContent is null', (WidgetTester tester) async {
+    testWidgets(
+        'should display "No content to display" when fileContent is null',
+        (WidgetTester tester) async {
       // This test ensures the fallback message is shown
       // We test this indirectly by checking the default display
 
@@ -280,7 +295,8 @@ void main() {
       expect(find.byType(Text), findsWidgets);
     });
 
-    testWidgets('should handle numbered lists correctly', (WidgetTester tester) async {
+    testWidgets('should handle numbered lists correctly',
+        (WidgetTester tester) async {
       // Arrange
       final items = ['First item', 'Second item', 'Third item'];
       final docxBytes = TestDocxGenerator.createDocxWithNumbering(items);
@@ -298,7 +314,7 @@ void main() {
       // Assert
       final textFinder = find.byType(Text);
       expect(textFinder, findsWidgets);
-      
+
       final textWidget = tester.widget<Text>(textFinder.first);
       expect(textWidget.data, contains('1. First item'));
       expect(textWidget.data, contains('2. Second item'));

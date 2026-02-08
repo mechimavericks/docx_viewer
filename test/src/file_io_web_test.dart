@@ -19,7 +19,8 @@ void main() {
       );
     });
 
-    test('readFileBytes error message should mention web platform limitation', () async {
+    test('readFileBytes error message should mention web platform limitation',
+        () async {
       // Act & Assert
       try {
         await FileIO.readFileBytes('test.docx');
@@ -37,7 +38,8 @@ void main() {
       }
     });
 
-    test('fileExists error message should mention web platform limitation', () async {
+    test('fileExists error message should mention web platform limitation',
+        () async {
       // Act & Assert
       try {
         await FileIO.fileExists('test.docx');
@@ -51,7 +53,8 @@ void main() {
       }
     });
 
-    test('readFileBytes should provide alternative solution in error', () async {
+    test('readFileBytes should provide alternative solution in error',
+        () async {
       // Act & Assert
       try {
         await FileIO.readFileBytes('test.docx');

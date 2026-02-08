@@ -18,14 +18,20 @@ void main() {
 
     test('should extract text from DOCX with multiple paragraphs', () {
       // Arrange
-      final paragraphs = ['First paragraph', 'Second paragraph', 'Third paragraph'];
-      final docxBytes = TestDocxGenerator.createDocxWithMultipleParagraphs(paragraphs);
+      final paragraphs = [
+        'First paragraph',
+        'Second paragraph',
+        'Third paragraph'
+      ];
+      final docxBytes =
+          TestDocxGenerator.createDocxWithMultipleParagraphs(paragraphs);
 
       // Act
       final result = extractTextFromDocxBytes(docxBytes);
 
       // Assert
-      expect(result, equals('First paragraph\nSecond paragraph\nThird paragraph'));
+      expect(
+          result, equals('First paragraph\nSecond paragraph\nThird paragraph'));
     });
 
     test('should handle empty DOCX document', () {
@@ -79,7 +85,8 @@ void main() {
 
     test('should throw exception when document.xml is not found', () {
       // Arrange
-      final invalidBytes = Uint8List.fromList([80, 75, 3, 4]); // ZIP header but invalid DOCX
+      final invalidBytes =
+          Uint8List.fromList([80, 75, 3, 4]); // ZIP header but invalid DOCX
 
       // Act & Assert
       expect(
@@ -102,7 +109,8 @@ void main() {
     test('should handle DOCX with empty paragraphs between text', () {
       // Arrange
       final paragraphs = ['First', '', 'Third'];
-      final docxBytes = TestDocxGenerator.createDocxWithMultipleParagraphs(paragraphs);
+      final docxBytes =
+          TestDocxGenerator.createDocxWithMultipleParagraphs(paragraphs);
 
       // Act
       final result = extractTextFromDocxBytes(docxBytes);

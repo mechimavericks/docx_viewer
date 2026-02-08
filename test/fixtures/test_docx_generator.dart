@@ -55,7 +55,8 @@ class TestDocxGenerator {
   }
 
   static void _addContentTypes(Archive archive) {
-    const contentTypesXml = '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    const contentTypesXml =
+        '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
   <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
   <Default Extension="xml" ContentType="application/xml"/>
@@ -79,7 +80,8 @@ class TestDocxGenerator {
   }
 
   static void _addDocument(Archive archive, String text) {
-    final documentXml = '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    final documentXml =
+        '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:body>
     <w:p>
@@ -111,7 +113,8 @@ class TestDocxGenerator {
     </w:p>''';
     }).join('\n');
 
-    final documentXml = '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    final documentXml =
+        '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:body>
 $paragraphs
@@ -134,7 +137,8 @@ $paragraphs
     </w:p>''';
     }).join('\n');
 
-    final documentXml = '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    final documentXml =
+        '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:body>
 $paragraphsXml
