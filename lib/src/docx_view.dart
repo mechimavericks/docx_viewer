@@ -194,12 +194,15 @@ class _DocxViewState extends State<DocxView> {
 
   /// Handles errors by calling the [onError] callback if provided, or displaying the error message.
   void _handleError(Exception error) {
+    setState(() {
+      isLoading = false;
+    });
+    
     if (widget.onError != null) {
       widget.onError!(error);
     } else {
       setState(() {
         fileContent = error.toString();
-        isLoading = false;
       });
     }
   }
