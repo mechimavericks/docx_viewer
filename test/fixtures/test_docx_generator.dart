@@ -16,7 +16,7 @@ class TestDocxGenerator {
     // Encode the archive as a ZIP file
     final zipEncoder = ZipEncoder();
     final zipBytes = zipEncoder.encode(archive);
-    return Uint8List.fromList(zipBytes!);
+    return Uint8List.fromList(zipBytes);
   }
 
   /// Creates a DOCX file with numbered list
@@ -31,7 +31,7 @@ class TestDocxGenerator {
     // Encode the archive as a ZIP file
     final zipEncoder = ZipEncoder();
     final zipBytes = zipEncoder.encode(archive);
-    return Uint8List.fromList(zipBytes!);
+    return Uint8List.fromList(zipBytes);
   }
 
   /// Creates an empty DOCX file
@@ -51,7 +51,7 @@ class TestDocxGenerator {
     // Encode the archive as a ZIP file
     final zipEncoder = ZipEncoder();
     final zipBytes = zipEncoder.encode(archive);
-    return Uint8List.fromList(zipBytes!);
+    return Uint8List.fromList(zipBytes);
   }
 
   static void _addContentTypes(Archive archive) {
