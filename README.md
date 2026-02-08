@@ -205,10 +205,10 @@ If the DOCX file path is empty, the file type is unsupported, or the file doesn'
 
 This package includes comprehensive test coverage to ensure reliability across all platforms. The test suite covers:
 
-- ✅ Text extraction from DOCX files (various formats, edge cases)
-- ✅ Widget functionality (loading states, error handling, display)
-- ✅ Platform-specific file I/O implementations
-- ✅ Error handling and edge cases
+- Text extraction from DOCX files (various formats, edge cases)
+- Widget functionality (loading states, error handling, display)
+- Platform-specific file I/O implementations
+- Error handling and edge cases
 
 ### Running Tests
 

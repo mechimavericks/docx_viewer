@@ -21,38 +21,38 @@ test/
 ## Test Coverage
 
 ### 1. Text Extraction Tests (`src/extract_text_from_docx_test.dart`)
-- ✅ Extract text from simple DOCX files
-- ✅ Extract text from DOCX with multiple paragraphs
-- ✅ Handle empty DOCX documents
-- ✅ Extract and number items from DOCX with numbering
-- ✅ Handle special characters and unicode
-- ✅ Handle invalid ZIP/DOCX data
-- ✅ Handle empty paragraphs and whitespace
-- ✅ Handle long text content
-- ✅ Test FirstOrNullExtension utility
+- Extract text from simple DOCX files
+- Extract text from DOCX with multiple paragraphs
+- Handle empty DOCX documents
+- Extract and number items from DOCX with numbering
+- Handle special characters and unicode
+- Handle invalid ZIP/DOCX data
+- Handle empty paragraphs and whitespace
+- Handle long text content
+- Test FirstOrNullExtension utility
 
 ### 2. DocxView Widget Tests (`src/docx_view_test.dart`)
-- ✅ Display loading indicator during content load
-- ✅ Display content after loading with bytes parameter
-- ✅ Apply custom font size
-- ✅ Use default font size when not specified
-- ✅ Display multiple paragraphs with newlines
-- ✅ Handle empty documents
-- ✅ Call onError callback when no input provided
-- ✅ Display error messages without callback
-- ✅ Validate error when both filePath and bytes provided
-- ✅ Handle invalid bytes gracefully
-- ✅ Render content in scrollable view
-- ✅ Handle numbered lists
-- ✅ Apply correct padding
+- Display loading indicator during content load
+- Display content after loading with bytes parameter
+- Apply custom font size
+- Use default font size when not specified
+- Display multiple paragraphs with newlines
+- Handle empty documents
+- Call onError callback when no input provided
+- Display error messages without callback
+- Validate error when both filePath and bytes provided
+- Handle invalid bytes gracefully
+- Render content in scrollable view
+- Handle numbered lists
+- Apply correct padding
 
 ### 3. Platform-Specific File I/O Tests
-- ✅ Stub implementation tests (`src/file_io_stub_test.dart`)
-- ✅ Web implementation tests (`src/file_io_web_test.dart`)
-- ✅ Verify proper error messages for unsupported operations
+- Stub implementation tests (`src/file_io_stub_test.dart`)
+- Web implementation tests (`src/file_io_web_test.dart`)
+- Verify proper error messages for unsupported operations
 
 ### 4. Utility Tests (`utils/support_type_test.dart`)
-- ✅ Validate Supporttype constants
+- Validate Supporttype constants
 
 ## Running Tests
 
@@ -107,11 +107,11 @@ Tests are automatically run on every pull request through GitHub Actions (`.gith
    - Uploads coverage artifacts
 
 The CI workflow:
-- ✅ Runs on pull requests to `main` and `dev` branches
-- ✅ Runs on push to `main` and `dev` branches
-- ✅ Generates test coverage reports
-- ✅ Comments on PRs with coverage information
-- ✅ Provides coverage badges
+- Runs on pull requests to `main` and `dev` branches
+- Runs on push to `main` and `dev` branches
+- Generates test coverage reports
+- Comments on PRs with coverage information
+- Provides coverage badges
 
 ## Adding New Tests
 
