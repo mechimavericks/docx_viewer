@@ -197,7 +197,7 @@ class _DocxViewState extends State<DocxView> {
     setState(() {
       isLoading = false;
     });
-    
+
     if (widget.onError != null) {
       widget.onError!(error);
     } else {
