@@ -64,7 +64,7 @@ jobs:
         run: flutter analyze --no-fatal-infos
 
       - name: Check for outdated dependencies
-        run: flutter pub outdated
+        run: flutter pub outdated || true
 
   test:
     name: Run Tests

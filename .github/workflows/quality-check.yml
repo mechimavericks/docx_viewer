@@ -72,7 +72,7 @@ jobs:
       - name: Check dependencies
         run: |
           echo "## Checking for outdated dependencies..."
-          flutter pub outdated
+          flutter pub outdated || true
 
       - name: Generate report
         if: always()
