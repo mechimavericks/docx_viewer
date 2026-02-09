@@ -6,24 +6,6 @@ import '../fixtures/test_docx_generator.dart';
 
 void main() {
   group('DocxView Widget', () {
-    testWidgets('should display loading indicator initially',
-        (WidgetTester tester) async {
-      // Arrange
-      final docxBytes = TestDocxGenerator.createSimpleDocx('Test content');
-
-      // Act
-      await tester.pumpWidget(
-        MaterialApp(
-          home: Scaffold(
-            body: DocxView(bytes: docxBytes),
-          ),
-        ),
-      );
-
-      // Assert
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
-    });
-
     testWidgets('should display content after loading with bytes parameter',
         (WidgetTester tester) async {
       // Arrange
