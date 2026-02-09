@@ -13,8 +13,8 @@ platforms:
   macos:
   linux:
 environment:
-  sdk: '>=3.5.0 <4.0.0'
-  flutter: '>=3.10.0'
+  sdk: '>=3.8.0 <4.0.0'
+  flutter: '>=3.27.0'
 
 dependencies:
   flutter:
