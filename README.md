@@ -253,9 +253,10 @@ If you find this package helpful and would like to support its development, cons
 
 ### These are supported funding model platforms:
 
-- **GitHub Sponsors**: [santoshvandari](https://github.com/sponsors/santoshvandari)
+<!-- - **GitHub Sponsors**: [santoshvandari](https://github.com/sponsors/santoshvandari) -->
 - **Ko-fi**: [santoshvandari](https://ko-fi.com/santoshvandari)
 - **Buy Me a Coffee**: [santoshvandari](https://www.buymeacoffee.com/santoshvandari)
+- **Buy Me MoMo**: [santoshvandari](https://buymemomo.com/santoshvandari)
 
 
 ### Thank you for your support!
