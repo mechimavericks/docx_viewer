@@ -1,9 +1,14 @@
 name: Code Quality Check
 
 on:
-  schedule:
-    # Run every Monday at 9:00 AM UTC
-    - cron: '0 9 * * 1'
+  pull_request:
+    branches:
+      - main
+      - dev
+  push:
+    branches:
+      - main
+      - dev
   workflow_dispatch:
 
 jobs:
@@ -13,7 +18,7 @@ jobs:
     permissions:
       contents: read
       issues: write
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,8 +26,8 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.0'
-          channel: 'stable'
+          flutter-version: "3.27.0"
+          channel: "stable"
           cache: true
 
       - name: Get dependencies
@@ -39,15 +44,15 @@ jobs:
           # Install lcov
           sudo apt-get update
           sudo apt-get install -y lcov
-          
+
           # Generate coverage report
           dart pub global activate coverage
           dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --packages=.dart_tool/package_config.json --report-on=lib
-          
+
           # Calculate coverage percentage
           COVERAGE=$(lcov --summary coverage/lcov.info 2>&1 | grep "lines" | awk '{print $2}' || echo "0.0%")
           echo "Current test coverage: $COVERAGE"
-          
+
           # You can set a minimum coverage threshold here
           # THRESHOLD=80
           # if (( $(echo "$COVERAGE < $THRESHOLD" | bc -l) )); then
@@ -60,11 +65,11 @@ jobs:
           # Check for TODO comments
           echo "## TODO Comments Found:"
           grep -r "TODO" lib/ || echo "No TODO comments found"
-          
+
           # Check for FIXME comments
           echo "## FIXME Comments Found:"
           grep -r "FIXME" lib/ || echo "No FIXME comments found"
-          
+
           # Check for deprecated API usage
           echo "## Checking for deprecated API usage..."
           flutter analyze --no-fatal-infos | grep -i "deprecated" || echo "No deprecated API usage found"
@@ -100,13 +105,13 @@ jobs:
           script: |
             const fs = require('fs');
             let report = 'No report available';
-            
+
             try {
               report = fs.readFileSync('quality_report.md', 'utf8');
             } catch (e) {
               console.log('Could not read quality report');
             }
-            
+
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
